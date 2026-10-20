@@ -1,0 +1,14 @@
+{
+  "name": "code-practice-app",
+  "version": "0.1.0",
+  "description": "A small, dependency-free coding practice app: problems, an in-browser editor, and tests that run in a Web Worker.",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "test": "node --test",
+    "start": "node scripts/serve.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

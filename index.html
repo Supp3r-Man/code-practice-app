@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code Practice</title>
+  <meta name="description" content="Practice small coding problems in the browser. Tests run in a Web Worker; progress stays in your browser.">
+  <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Code Practice</h1>
+    <div class="progress" aria-label="Progress">
+      <span id="progress-text">0 of 0 solved</span>
+      <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="progress-bar"><div id="progress-fill"></div></div>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" aria-label="Problems">
+      <label class="field">
+        <span>Search</span>
+        <input id="filter-query" type="search" placeholder="title or tag" autocomplete="off">
+      </label>
+      <div class="filters">
+        <label class="field">
+          <span>Difficulty</span>
+          <select id="filter-difficulty">
+            <option value="">All</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>Status</span>
+          <select id="filter-status">
+            <option value="">All</option>
+            <option value="todo">Not solved</option>
+            <option value="solved">Solved</option>
+          </select>
+        </label>
+      </div>
+      <ul id="problem-list" class="problem-list"></ul>
+      <p id="list-empty" class="muted" hidden>No problems match the filters.</p>
+    </aside>
+
+    <main class="main" id="main">
+      <article id="problem" aria-labelledby="problem-title">
+        <div class="problem-head">
+          <h2 id="problem-title"></h2>
+          <span id="problem-difficulty" class="badge"></span>
+          <span id="problem-solved" class="solved-flag" hidden>Solved</span>
+        </div>
+        <p id="problem-tags" class="tags"></p>
+        <div id="problem-prompt" class="prompt"></div>
+
+        <section aria-label="Editor">
+          <label for="editor" class="editor-label">Your solution (JavaScript)</label>
+          <textarea id="editor" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" wrap="off"></textarea>
+          <p class="muted small">Ctrl+Enter (or Cmd+Enter) runs the tests. Tab inserts two spaces; press Esc, then Tab, to move focus out of the editor.</p>
+          <div class="actions">
+            <button id="run" type="button" class="primary">Run tests</button>
+            <button id="hint" type="button">Show hint</button>
+            <button id="solution" type="button">Show solution</button>
+            <button id="reset" type="button">Reset code</button>
+          </div>
+        </section>
+
+        <section id="hint-box" class="note" hidden aria-live="polite"></section>
+        <section id="results" class="results" aria-live="polite" aria-atomic="false"></section>
+        <section id="solution-box" class="note" hidden></section>
+      </article>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <span>Your code runs only in your browser, in a Web Worker. Progress and drafts are stored in this browser's local storage.</span>
+  </footer>
+
+  <script src="src/problems.js"></script>
+  <script src="src/solutions.js"></script>
+  <script src="src/lib.js"></script>
+  <script src="src/app.js"></script>
+</body>
+</html>
