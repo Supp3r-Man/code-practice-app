@@ -61,7 +61,7 @@ Beyond those, I drove the real page in headless Chrome once, by hand, with a thr
 - Tested in Chrome only (headless, once, as above). Other browsers are untested, though the app uses only standard APIs (`Worker`, `structuredClone`, `localStorage`).
 - The difficulty labels are my own judgement; they are not calibrated against any other site.
 - Not deployed anywhere. To publish it, enable GitHub Pages for the repository and serve the repository root.
-- CI: the workflow (`.github/workflows/ci.yml`) runs `npm test` on Node 20, 22 and 24. CI not yet confirmed.
+- CI: the workflow (`.github/workflows/ci.yml`) runs `npm test` on Node 20, 22 and 24. It ran green on all three on the first run on GitHub Actions (ubuntu-latest, 2026-10-20).
 
 ## Clone
 
